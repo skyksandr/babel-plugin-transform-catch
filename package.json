@@ -1,0 +1,27 @@
+{
+  "name": "babel-plugin-transform-catch",
+  "author": "Aleksandr Kunin <skyksandr@gmail.com>",
+  "repository": "skyksandr/babel-plugin-transform-catch",
+  "description": "Transforms .catch(..) to ['catch'](...)",
+  "version": "0.1.1",
+  "main": "build/index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "babel src -d build",
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "npm run test -- --watch",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "google-apps-script",
+    "js",
+    "babel",
+    "babel-plugin"
+  ]
+}
