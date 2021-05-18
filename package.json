@@ -6,15 +6,16 @@
   "version": "0.1.1",
   "main": "build/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "mocha": "^2.2.5"
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/register": "^7.13.16",
+    "mocha": "^8.4.0"
   },
   "scripts": {
     "clean": "rm -rf build",
     "build": "babel src -d build",
-    "test": "mocha --compilers js:babel-register",
+    "test": "mocha --require @babel/register",
     "test:watch": "npm run test -- --watch",
     "prepublish": "npm run clean && npm run build"
   },
